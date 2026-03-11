@@ -1,0 +1,47 @@
+{
+  "hero": {
+    "role": "Full-Stack Software Engineer",
+    "name": "Joseph Marius Reyes",
+    "summary": "Building scalable web applications with ReactJS, PHP Laravel, and enterprise development experience in .NET technologies.",
+    "initials": "JR",
+    "photoNote": "Picture Portion"
+  },
+  "about": {
+    "title": "About Me",
+    "paragraphs": [
+      "I am a Full-Stack Software Engineer specializing in ReactJS and PHP Laravel, with prior experience developing enterprise applications using .NET technologies.",
+      "I focus on building scalable, maintainable web applications, from backend APIs to modern frontend interfaces. I transitioned to ReactJS and Laravel because of their flexibility and efficiency in delivering high-quality software quickly.",
+      "My experience includes system architecture, database design, REST API development, and application deployment, allowing me to take ideas from concept to production-ready systems.",
+      "Alongside full-time development, I am open to freelance opportunities, helping businesses and startups transform ideas into reliable, scalable applications."
+    ]
+  },
+  "workExperience": {
+    "title": "Work Experience",
+    "items": [
+      {
+        "role": "Software Engineer",
+        "company": "Nowcom Global Services",
+        "duration": "Dec 2021 - Dec 2025 · 4 yrs 1 mo",
+        "location": "Remote",
+        "description": "Develop and maintain full-stack web applications, building backend services and modern user interfaces while ensuring performance, reliability, and maintainable code."
+      },
+      {
+        "role": "Wordpress Developer",
+        "company": "Nowcom Global Services",
+        "duration": "Sep 2015 - Dec 2021 · 6 yrs 4 mos",
+        "description": "Developed and customized WordPress websites, implementing themes, plugins, and performance optimizations to deliver functional and responsive web solutions."
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projects I Have Created",
+    "items": ["COOP app", "PDF signer", "Medical inventory app"]
+  },
+  "contact": {
+    "title": "Contact Me",
+    "numberLabel": "Number:",
+    "number": "09673681493",
+    "emailLabel": "Email:",
+    "email": "joseph.marius.reyes@gmail.com"
+  }
+}

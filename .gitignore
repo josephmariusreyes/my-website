@@ -1,2 +1,6 @@
+
+tempfiles/
+tempfiles/**
+
 .vs/
 .vs/**

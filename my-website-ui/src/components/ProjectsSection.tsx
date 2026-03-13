@@ -33,30 +33,32 @@ function ProjectsSection() {
 
   if (isLoading) {
     return (
-      <section className="card">
-        <h2>Loading...</h2>
-      </section>
+      <div id="portfolio" className="card projects-section">
+        <div className="loading">Loading...</div>
+      </div>
     )
   }
 
   if (error || !content) {
     return (
-      <section className="card">
-        <h2>Projects I Have Created</h2>
+      <div id="portfolio" className="card projects-section">
+        <h2>Projects</h2>
         <p>{error ?? 'No content found.'}</p>
-      </section>
+      </div>
     )
   }
 
   return (
-    <section className="card">
-      <h2>{content.title}</h2>
-      <ul className="project-list">
+    <div id="portfolio" className="card projects-section">
+      <h2>Projects</h2>
+      <div className="projects-grid">
         {content.items.map((project, index) => (
-          <li key={index}>{project}</li>
+          <div key={index} className="project-card">
+            {project}
+          </div>
         ))}
-      </ul>
-    </section>
+      </div>
+    </div>
   )
 }
 

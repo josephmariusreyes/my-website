@@ -33,31 +33,35 @@ function ContactSection() {
 
   if (isLoading) {
     return (
-      <section className="card contact-card">
-        <h2>Loading...</h2>
-      </section>
+      <div id="contact" className="card contact-section">
+        <div className="loading">Loading...</div>
+      </div>
     )
   }
 
   if (error || !content) {
     return (
-      <section className="card contact-card">
+      <div id="contact" className="card contact-section">
         <h2>Contact Me</h2>
         <p>{error ?? 'No content found.'}</p>
-      </section>
+      </div>
     )
   }
 
   return (
-    <section className="card contact-card">
-      <h2>{content.title}</h2>
-      <p>
-        <span>{content.numberLabel}</span> {content.number}
-      </p>
-      <p>
-        <span>{content.emailLabel}</span> {content.email}
-      </p>
-    </section>
+    <div id="contact" className="card contact-section">
+      <h2>Contact Me</h2>
+      <div className="contact-grid">
+        <div className="contact-item">
+          <h4>{content.numberLabel}</h4>
+          <p>{content.number}</p>
+        </div>
+        <div className="contact-item">
+          <h4>{content.emailLabel}</h4>
+          <p>{content.email}</p>
+        </div>
+      </div>
+    </div>
   )
 }
 

@@ -33,28 +33,38 @@ function AboutSection() {
 
   if (isLoading) {
     return (
-      <section className="card">
-        <h2>Loading...</h2>
-      </section>
+      <div id="about" className="card about-section">
+        <div className="loading">Loading...</div>
+      </div>
     )
   }
 
   if (error || !content) {
     return (
-      <section className="card">
-        <h2>About Me</h2>
-        <p>{error ?? 'No content found.'}</p>
-      </section>
+      <div id="about" className="card about-section">
+        <div className="about-image">A</div>
+        <div className="about-content">
+          <h2>About Me</h2>
+          <p>{error ?? 'No content found.'}</p>
+        </div>
+      </div>
     )
   }
 
   return (
-    <section className="card">
-      <h2>{content.title}</h2>
-      {content.paragraphs.map((paragraph, index) => (
-        <p key={index}>{paragraph}</p>
-      ))}
-    </section>
+    <div id="about" className="card about-section">
+      <div className="about-image">{content.title.charAt(0)}</div>
+      <div className="about-content">
+        <h2>I am Professional Full-Stack Software Engineer</h2>
+        {content.paragraphs.map((paragraph, index) => (
+          <p key={index}>{paragraph}</p>
+        ))}
+        <div className="about-actions">
+          <button className="btn-primary">My Project</button>
+          <button className="btn-secondary">Download CV</button>
+        </div>
+      </div>
+    </div>
   )
 }
 

@@ -33,36 +33,36 @@ function WorkExperienceSection() {
 
   if (isLoading) {
     return (
-      <section className="card">
-        <h2>Loading...</h2>
-      </section>
+      <div id="experience" className="card experience-section">
+        <div className="loading">Loading...</div>
+      </div>
     )
   }
 
   if (error || !content) {
     return (
-      <section className="card">
+      <div id="experience" className="card experience-section">
         <h2>Work Experience</h2>
         <p>{error ?? 'No content found.'}</p>
-      </section>
+      </div>
     )
   }
 
   return (
-    <section className="card">
-      <h2>{content.title}</h2>
+    <div id="experience" className="card experience-section">
+      <h2>Work Experience</h2>
       <div className="timeline">
         {content.items.map((item, index) => (
-          <article key={index} className="timeline-item">
+          <div key={index} className="timeline-item">
             <h3>{item.role}</h3>
-            <p className="meta">{item.company}</p>
-            <p className="meta">{item.duration}</p>
-            {item.location && <p className="meta">{item.location}</p>}
-            <p>{item.description}</p>
-          </article>
+            <div className="timeline-meta">{item.company}</div>
+            <div className="timeline-meta">{item.duration}</div>
+            {item.location && <div className="timeline-meta">{item.location}</div>}
+            <p className="timeline-description">{item.description}</p>
+          </div>
         ))}
       </div>
-    </section>
+    </div>
   )
 }
 

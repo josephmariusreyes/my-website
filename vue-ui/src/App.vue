@@ -1,7 +1,7 @@
 <script setup>
 import HeroSection from './components/HeroSection.vue'
 import WorkExperience from './components/WorkExperience.vue'
-import FeaturedProjects from './components/FeaturedProjects.vue'
+import PortfolioProjects from './components/PortfolioProjects.vue'
 </script>
 
 <template>
@@ -9,5 +9,5 @@ import FeaturedProjects from './components/FeaturedProjects.vue'
   <hr class="divider" />
   <WorkExperience />
   <hr class="divider" />
-  <FeaturedProjects />
+  <PortfolioProjects />
 </template>

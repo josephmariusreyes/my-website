@@ -48,6 +48,8 @@ const experiences = [
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .experience-header {

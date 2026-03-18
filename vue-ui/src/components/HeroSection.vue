@@ -48,12 +48,13 @@
 .hero-inner {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 2.5rem;
 }
 
 .profile-picture {
-  width: 140px;
-  height: 140px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   background-color: #d1d5db;
   background-size: cover;

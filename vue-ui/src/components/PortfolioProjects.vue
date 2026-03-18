@@ -10,7 +10,7 @@ const projects = [
 
 <template>
   <section class="section-wrapper">
-    <h2 class="section-title">Featured Projects</h2>
+    <h2 class="section-title">Portfolio Projects</h2>
 
     <div class="projects-grid">
       <ProjectCard

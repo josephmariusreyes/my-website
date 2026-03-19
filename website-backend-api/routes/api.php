@@ -3,4 +3,4 @@
 use App\Http\Controllers\CvController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/cv', [CvController::class, 'getCvInfo']);
+Route::get('/cv/getCvInfo', [CvController::class, 'getCvInfo']);

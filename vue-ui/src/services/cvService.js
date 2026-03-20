@@ -9,7 +9,8 @@ const apiClient = axios.create({
 });
 
 export default {
-  getCvInfo() {
-    return apiClient.get("/getCvInfo");
+  async getCvInfo() {
+    const response = await apiClient.get("/getCvInfo");
+    return response.data;
   },
 };

@@ -11,7 +11,7 @@ class CvController extends Controller
         return response()->json([
             'name'     => 'John Doe',
             'title'    => 'Software Engineer',
-            'location' => 'New York, USA',
+            'summary' => 'Hello world',
         ]);
     }
 }

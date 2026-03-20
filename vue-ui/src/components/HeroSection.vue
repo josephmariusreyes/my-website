@@ -1,4 +1,9 @@
-<script setup></script>
+<script setup>
+import { storeToRefs } from 'pinia'
+import { useCvStore } from '../stores/cvStore'
+
+const { cvDetails } = storeToRefs(useCvStore())
+</script>
 
 <template>
   <section class="section-wrapper hero-section">
@@ -7,16 +12,14 @@
       <div class="profile-picture" role="img" aria-label="Profile photo" />
 
       <div class="hero-text">
-        <h1 class="hero-name">Hi, I'm Marie Thompson.</h1>
-        <p class="hero-tagline">Front-End Developer based in New York.</p>
-        <p class="hero-bio">
-          I specialize in building responsive <em>and user-friendly</em> web applications.
-        </p>
+        <h1 class="hero-name">Hi, I'm {{ cvDetails?.name }}.</h1>
+        <p class="hero-tagline">{{ cvDetails?.title }}</p>
+        <p class="hero-bio">{{ cvDetails?.summary }}</p>
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary">Contact Me</a>
 
           <a
-            href="https://www.linkedin.com"
+            :href="cvDetails?.linkedinUrl"
             target="_blank"
             rel="noopener noreferrer"
             class="social-link"

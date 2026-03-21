@@ -1,6 +1,7 @@
 <script setup>
 import { storeToRefs } from 'pinia'
 import { useCvStore } from '../stores/cvStore'
+import resumePic from '../assets/resume-pic.png'
 
 const { cvDetails } = storeToRefs(useCvStore())
 </script>
@@ -9,16 +10,16 @@ const { cvDetails } = storeToRefs(useCvStore())
   <section class="section-wrapper hero-section">
     <div class="hero-inner">
       <!-- Replace background-image with your photo URL when ready -->
-      <div class="profile-picture" role="img" aria-label="Profile photo" />
+      <div class="profile-picture" role="img" aria-label="Profile photo" :style="{ backgroundImage: `url(${resumePic})` }" />
 
       <div class="hero-text">
         <h1 class="hero-name">
-          Hi, I'm Jeph R
+          Hi, I'm Jeph R.
           <br>
           AI First - FullStack Software Developer
         </h1>
         <p>📍 based in the Philippines.</p>
-        <p class="hero-tagline">Thanks for visiting my resume website! Keep reading to learn more about my skills and qualification</p>
+        <p class="hero-tagline">Thanks for visiting my resume website! I’ve spent over 10 years in the IT industry building and maintaining enterprise applications for the auto finance sector. These days I'm interested in working with startups, mid-size enterprises or taking on part-time projects, and I'm always happy to collaborate. Keep reading to learn more about my skills and qualification!</p>
         
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary">Contact Me</a>
@@ -66,8 +67,9 @@ const { cvDetails } = storeToRefs(useCvStore())
   border-radius: 50%;
   background-color: #d1d5db;
   background-size: cover;
-  background-position: center;
+  background-position: 1px 2px;
   flex-shrink: 0;
+  border: 5px solid #6366f1;
 }
 
 .hero-text {

@@ -6,7 +6,10 @@
     <hr class="divider" />
     <WorkExperience />
     <hr class="divider" />
-    <PortfolioProjects />
+    <ProProjects />
+    <hr class="divider" />
+    <DemoProjects />
+    <hr class="divider" />
   </div>
   <AppLoader v-else />
 </template>
@@ -16,7 +19,8 @@ import { ref, onBeforeMount } from 'vue'
 import HeroSection from '../components/HeroSection.vue'
 import SkillsAndQualification from '../components/SkillsAndQualification.vue'
 import WorkExperience from '../components/WorkExperience.vue'
-import PortfolioProjects from '../components/PortfolioProjects.vue'
+import ProProjects from '../components/ProProjects.vue'
+import DemoProjects from '../components/DemoProjects.vue'
 import AppLoader from '../components/AppLoader.vue'
 import cvService from '../services/cvService'
 import { useCvStore } from '../stores/cvStore'

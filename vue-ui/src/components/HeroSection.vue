@@ -12,9 +12,14 @@ const { cvDetails } = storeToRefs(useCvStore())
       <div class="profile-picture" role="img" aria-label="Profile photo" />
 
       <div class="hero-text">
-        <h1 class="hero-name">Hi, I'm {{ cvDetails?.name }}.</h1>
-        <p class="hero-tagline">{{ cvDetails?.title }}</p>
-        <p class="hero-bio">{{ cvDetails?.summary }}</p>
+        <h1 class="hero-name">
+          Hi, I'm Jeph R
+          <br>
+          AI First - FullStack Software Developer
+        </h1>
+        <p>📍 based in the Philippines.</p>
+        <p class="hero-tagline">Thanks for visiting my resume website! Keep reading to learn more about my skills and qualification</p>
+        
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary">Contact Me</a>
 

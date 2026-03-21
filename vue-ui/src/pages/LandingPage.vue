@@ -2,6 +2,8 @@
   <div v-if="isReady">
     <HeroSection />
     <hr class="divider" />
+    <SkillsAndQualification />
+    <hr class="divider" />
     <WorkExperience />
     <hr class="divider" />
     <PortfolioProjects />
@@ -12,6 +14,7 @@
 <script setup>
 import { ref, onBeforeMount } from 'vue'
 import HeroSection from '../components/HeroSection.vue'
+import SkillsAndQualification from '../components/SkillsAndQualification.vue'
 import WorkExperience from '../components/WorkExperience.vue'
 import PortfolioProjects from '../components/PortfolioProjects.vue'
 import AppLoader from '../components/AppLoader.vue'

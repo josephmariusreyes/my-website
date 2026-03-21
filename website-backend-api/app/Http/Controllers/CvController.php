@@ -8,10 +8,8 @@ class CvController extends Controller
 {
     public function getCvInfo(): JsonResponse
     {
-        return response()->json([
-            'name'     => 'John Doe',
-            'title'    => 'Software Engineer',
-            'summary' => 'Hello world',
-        ]);
+        $data = json_decode(file_get_contents(resource_path('data/cv.json')), true);
+
+        return response()->json($data);
     }
 }

@@ -14,12 +14,16 @@ const { cvDetails } = storeToRefs(useCvStore())
 
       <div class="hero-text">
         <h1 class="hero-name">
-          Hi, I'm Jeph R.
+          Jeph Reyes
           <br>
           AI First - FullStack Software Developer
         </h1>
         <p>📍 based in the Philippines.</p>
-        <p class="hero-tagline">Thanks for visiting my resume website! I’ve spent over 10 years in the IT industry building and maintaining enterprise applications for the auto finance sector. These days I'm interested in working with startups, mid-size enterprises or taking on part-time projects, and I'm always happy to collaborate. Keep reading to learn more about my skills and qualification!</p>
+        <p class="hero-tagline">
+          Thanks for visiting my Portfolio website! I've been in the IT industry for 10 years building and maintaining enterprise applications in the auto finance sector. Throughout my career, I've focused on creating reliable apps that support real-world business operations.
+          <br/><br/>
+          For the foreseeable future, my goal is to work with <b>startups</b> and <b>mid-size enterprises</b>, as well as taking on <b>freelance</b>, <b>contractual</b>, or <b>part-time jobs</b>. I enjoy contributing to meaningful projects. Feel free to keep reading to learn more about my skills, experience, and qualifications.
+        </p>
         
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary">Contact Me</a>

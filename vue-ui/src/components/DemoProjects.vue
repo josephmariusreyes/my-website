@@ -10,8 +10,8 @@ const projects = [
 <template>
   <section class="section-wrapper">
     <div class="row-header">
-      <h2 class="section-title">Demo Projects</h2>
-      <p class="row-subtitle">Here are some personal demo projects I've built to explore ideas and sharpen my skills.</p>
+      <h2 class="section-title">Demo/Personal Projects</h2>
+      <p class="row-subtitle">In my spare time, I build personal projects to explore new ideas, experiment with technologies, and further sharpen my development skills.</p>
     </div>
 
     <div class="projects-grid">
@@ -64,6 +64,7 @@ const projects = [
 
 .card-slot {
   width: calc((100% - 2 * 1.25rem) / 3);
+  max-width: 270px;
   box-sizing: border-box;
 }
 </style>

@@ -13,4 +13,9 @@ export default {
     const response = await apiClient.get("/getCvInfo");
     return response.data;
   },
+
+  async sendMessage(payload) {
+    const response = await apiClient.post("/sendMessage", payload);
+    return response.data;
+  },
 };

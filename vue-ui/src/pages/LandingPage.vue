@@ -7,9 +7,10 @@
     <WorkExperience />
     <hr class="divider" />
     <ProProjects />
-    <hr class="divider" />
+    <!-- <hr class="divider" />
     <DemoProjects />
-    <hr class="divider" />
+    <hr class="divider" /> -->
+    <AppFooter />
   </div>
   <AppLoader v-else />
 </template>
@@ -22,6 +23,7 @@ import WorkExperience from '../components/WorkExperience.vue'
 import ProProjects from '../components/ProProjects.vue'
 import DemoProjects from '../components/DemoProjects.vue'
 import AppLoader from '../components/AppLoader.vue'
+import AppFooter from '../components/AppFooter.vue'
 import cvService from '../services/cvService'
 import { useCvStore } from '../stores/cvStore'
 

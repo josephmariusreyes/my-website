@@ -1,5 +1,5 @@
 <script setup>
-defineProps({
+const props = defineProps({
   title: {
     type: String,
     required: true,
@@ -8,11 +8,24 @@ defineProps({
     type: String,
     default: '',
   },
+  url: {
+    type: String,
+    default: '',
+  },
+  description: {
+    type: String,
+    default: '',
+  },
 })
 </script>
 
 <template>
-  <article class="project-card">
+  <a
+    class="project-card"
+    :href="url || undefined"
+    :target="url ? '_blank' : undefined"
+    rel="noopener noreferrer"
+  >
     <div
       class="card-image"
       :style="image ? { backgroundImage: `url('${image}')` } : {}"
@@ -21,8 +34,9 @@ defineProps({
     />
     <div class="card-body">
       <p class="card-title">{{ title }}</p>
+      <p v-if="description" class="card-description">{{ description }}</p>
     </div>
-  </article>
+  </a>
 </template>
 
 <style scoped>
@@ -32,12 +46,19 @@ defineProps({
   overflow: hidden;
   box-shadow: var(--card-shadow);
   background: var(--bg);
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card[href] {
+  cursor: pointer;
 }
 
 .card-image {
   height: 160px;
   background-color: #e5e7eb;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
 }
 
@@ -50,5 +71,12 @@ defineProps({
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--text-heading);
+}
+
+.card-description {
+  font-size: 0.75rem;
+  color: var(--text-body);
+  line-height: 1.4;
+  text-align: left;
 }
 </style>

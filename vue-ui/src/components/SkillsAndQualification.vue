@@ -131,7 +131,7 @@
     <!-- ── Row 3: Other skills ────────────────────────────── -->
     <div class="row-header" style="margin-top: 3rem;">
       <h2 class="section-title">My Other Skills</h2>
-      <p class="row-subtitle">Throughout my years in IT, I've had the opportunity to work with many different technologies. Below are the top 10 I have used within the last 2 years.</p>
+      <p class="row-subtitle">Throughout my years in IT, I've had the opportunity to work with many different technologies. Below are the top 10 I have used within my profesional years.</p>
     </div>
 
     <div class="other-skills-list">
@@ -162,7 +162,7 @@ const otherSkills = [
   { name: 'Canva',      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg',       score: 7 },
   { name: 'CloudFlare', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original.svg', score: 6 },
   { name: 'jQuery',     logo: devicon('jquery'),                                                                          score: 6 },
-  { name: 'Angular',    logo: devicon('angular'),                                                                         score: 6 },
+  { name: 'Angular',    logo: devicon('angular'),                                                                         score: 7 },
 ]
 </script>
 

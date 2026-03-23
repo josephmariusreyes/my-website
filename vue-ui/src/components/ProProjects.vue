@@ -1,13 +1,18 @@
 <script setup>
 import { computed } from 'vue'
 import ProjectCard from './ProjectCard.vue'
+import dcDashboardImg from '@/assets/dc-dashboard.png'
+import dwsImg from '@/assets/dws.png'
+import auctionCenterImg from '@/assets/auction-center.png'
+import dcChatImg from '@/assets/mobile-dc-chat-resize.png'
+import nhtImg from '@/assets/nht.png'
 
 const projects = [
-  { id: 1, title: 'North Hollywood Toyota', image: '', description: '', url: 'https://www.toyotaofhollywood.com/' },
-  { id: 2, title: 'Dealer Center', image: '', description: '', url: 'https://www.dealercenter.com/' },
-  { id: 3, title: 'Dealer Website', image: '', description: '', url: 'https://www.dealercenter.com/dealer-websites/#dw-premium-pro' },
-  { id: 4, title: 'Auction Center', image: '', description: '', url: 'https://www.dealercenter.com/inventory-management/#im-auction-center' },
-  { id: 5, title: 'DC Chat', image: '', description: '', url: 'https://www.dealercenter.com/inventory-management/#im-auction-center' },
+  { id: 1, title: 'North Hollywood Toyota', image: nhtImg, description: 'North Hollywood Toyota dealership website, supporting vehicle listings, customer inquiries, and service scheduling.', url: 'https://www.toyotaofhollywood.com/' },
+  { id: 2, title: 'Dealer Center', image: dcDashboardImg, description: 'Dealership management platform used by automotive dealers to manage inventory, sales, financing, and customer records.', url: 'https://www.dealercenter.com/' },
+  { id: 3, title: 'Dealer Website', image: dwsImg, description: 'Is a platform that provides automotive dealerships with customizable websites designed to showcase vehicle inventory and capture customer leads.', url: 'https://www.dealercenter.com/dealer-websites/#dw-premium-pro' },
+  { id: 4, title: 'Auction Center', image: auctionCenterImg, description: 'Is a platform within DealerCenter that allows automotive dealers to browse and purchase vehicles from multiple auction sources in one place', url: 'https://www.dealercenter.com/inventory-management/#im-auction-center' },
+  { id: 5, title: 'DC Chat', image: dcChatImg, description: 'Is a messaging and communication tool built for automotive dealerships to interact with customers directly through their websites. It enables real-time conversations.', url: 'https://www.dealercenter.com/inventory-management/#im-auction-center' },
 ]
 
 const chunkSize = 3
@@ -29,7 +34,7 @@ const slides = computed(() => {
 
     <v-carousel
       height="auto"
-      hide-delimiter-background
+      hide-delimiters
       show-arrows="hover"
       class="pro-carousel"
     >
@@ -43,6 +48,8 @@ const slides = computed(() => {
             :key="project.id"
             :title="project.title"
             :image="project.image"
+            :description="project.description"
+            :url="project.url"
             class="slide-card"
           />
         </div>

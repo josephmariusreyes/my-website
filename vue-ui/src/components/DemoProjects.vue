@@ -1,16 +1,17 @@
 <script setup>
 import ProjectCard from './ProjectCard.vue'
+import pocLogo from '../assets/poc-logo.png'
 
 const projects = [
-  { id: 1, title: 'MyCrm', image: '', description: '', url: '' },
-  { id: 2, title: 'POC', image: '', description: '', url: '' },
+  // { id: 1, title: 'MyCrm', image: '', description: '', url: '' },
+  { id: 2, title: 'POC & Samples', image: pocLogo, description: 'Collection of mini projects I work on to test, practice and learn different techniques to improve the quality of my work.', url: '' },
 ]
 </script>
 
 <template>
   <section class="section-wrapper">
     <div class="row-header">
-      <h2 class="section-title">Demo/Personal Projects</h2>
+      <h2 class="section-title">Personal Projects</h2>
       <p class="row-subtitle">In my spare time, I build personal projects to explore new ideas, experiment with technologies, and further sharpen my development skills.</p>
     </div>
 
@@ -20,7 +21,7 @@ const projects = [
         :key="project.id"
         class="card-slot"
       >
-        <ProjectCard :title="project.title" :image="project.image" />
+        <ProjectCard :title="project.title" :image="project.image" :description="project.description" :url="project.url" />
       </div>
     </div>
   </section>
@@ -66,5 +67,9 @@ const projects = [
   width: calc((100% - 2 * 1.25rem) / 3);
   max-width: 270px;
   box-sizing: border-box;
+}
+
+.card-slot :deep(.card-image) {
+  background-size: cover;
 }
 </style>

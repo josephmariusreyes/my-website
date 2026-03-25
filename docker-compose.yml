@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+
+  vue-ui:
+    build: ./vue-ui
+    container_name: my-website-ui
+    ports:
+      - "5173:80"
+    networks:
+      - web-network
+
+  api:
+    build: ./website-backend-api
+    container_name: my-website-api
+    ports:
+      - "8000:8000"
+    networks:
+      - web-network
+
+networks:
+  web-network:
+    external: true

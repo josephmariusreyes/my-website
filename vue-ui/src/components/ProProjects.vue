@@ -9,7 +9,7 @@ import nhtImg from '@/assets/nht.png'
 
 const projects = [
   { id: 1, title: 'North Hollywood Toyota', image: nhtImg, description: 'North Hollywood Toyota dealership website, supporting vehicle listings, customer inquiries, and service scheduling.', url: 'https://www.toyotaofhollywood.com/' },
-  { id: 2, title: 'Dealer Center', image: dcDashboardImg, description: 'Dealership management platform used by automotive dealers to manage inventory, sales, financing, and customer records.', url: 'https://www.dealercenter.com/' },
+  { id: 2, title: 'Dealer Center', image: dcDashboardImg, description: 'Dealership management platform used by automotive dealers to manage inventory, sales, financing, and customer records.', url: 'https://www.dealercenter.com/crm/#crm-dashboard' },
   { id: 3, title: 'Dealer Website', image: dwsImg, description: 'Is a platform that provides automotive dealerships with customizable websites designed to showcase vehicle inventory and capture customer leads.', url: 'https://www.dealercenter.com/dealer-websites/#dw-premium-pro' },
   { id: 4, title: 'Auction Center', image: auctionCenterImg, description: 'Is a platform within DealerCenter that allows automotive dealers to browse and purchase vehicles from multiple auction sources in one place', url: 'https://www.dealercenter.com/inventory-management/#im-auction-center' },
   { id: 5, title: 'DC Chat', image: dcChatImg, description: 'Is a messaging and communication tool built for automotive dealerships to interact with customers directly through their websites. It enables real-time conversations.', url: 'https://www.dealercenter.com/inventory-management/#im-auction-center' },

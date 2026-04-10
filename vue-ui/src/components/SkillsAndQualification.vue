@@ -114,15 +114,15 @@
               <img :src="devicon('docker')" alt="Docker" />
             </div>
             <div class="logo-circle">
-              <img :src="devicon('digitalocean')" alt="DigitalOcean" />
+              <img :src="devicon('linux')" alt="Linux" />
             </div>
           </div>
-          <h3 class="top-card__name">Docker &amp; DigitalOcean</h3>
+          <h3 class="top-card__name">Docker &amp; Cloud Linux Server</h3>
         </div>
         <p class="top-card__desc">
             Docker - lets me package applications and their dependencies into consistent portable containers. 
             <br/><br/>
-            DigitalOcean - Offers cost effective droplets wherein I can deploy and host my containarized frontend app, backend APIs and database.
+            Cloud Linux Server - I deploy and host my containerized frontend apps, backend APIs, and databases on cloud-based Linux servers, giving me full control over the environment and infrastructure.
         </p>
       </div>
 

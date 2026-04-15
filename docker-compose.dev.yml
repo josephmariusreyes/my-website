@@ -1,0 +1,31 @@
+version: "3.9"
+
+# Development overrides. Run with:
+#   docker compose -f docker-compose.yml -f docker-compose.dev.yml up
+
+services:
+
+  vue-ui:
+    build:
+      # Target the 'development' stage which runs the Vite dev server with HMR
+      target: development
+    ports:
+      # Vite dev server runs on 5173 inside the container
+      - "5173:5173"
+    volumes:
+      # Mount source code so file changes are reflected instantly without rebuilding
+      - ./vue-ui:/app
+      # Keep the container's node_modules separate from the host to avoid conflicts
+      - /app/node_modules
+
+  api:
+    build:
+      # Target the 'dev' stage which includes dev dependencies (PHPUnit, Faker, etc.)
+      target: dev
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount source code for live editing without rebuilding the image
+      - ./website-backend-api:/var/www
+      # Keep the container's vendor directory separate from the host
+      - /var/www/vendor

@@ -1,20 +1,22 @@
 version: "3.9"
 
+# Base shared config. Always combine with an override file:
+#   Development: docker compose -f docker-compose.yml -f docker-compose.dev.yml up
+#   Production:  docker compose -f docker-compose.yml -f docker-compose.prod.yml up --build
+
 services:
 
   vue-ui:
-    build: ./vue-ui
     container_name: my-website-ui
-    ports:
-      - "5173:80"
+    build:
+      context: ./vue-ui
     networks:
       - web-network
 
   api:
-    build: ./website-backend-api
     container_name: my-website-api
-    ports:
-      - "8000:8000"
+    build:
+      context: ./website-backend-api
     networks:
       - web-network
 

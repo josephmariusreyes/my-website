@@ -18,7 +18,7 @@ services:
   api:
     build:
       # Target the 'prod' stage which excludes dev dependencies for a leaner image
-      target: prod
+      target: production
     ports:
       - "8000:8000"
     # Automatically restart the container if it crashes or the host reboots

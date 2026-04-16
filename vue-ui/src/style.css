@@ -79,6 +79,7 @@ li {
   max-width: 1024px;
   margin: 0 auto;
   background: #ffffff;
+  min-height: 100vh; /* Fallback for browsers that don't support dvh */
   min-height: 100dvh;
 }
 

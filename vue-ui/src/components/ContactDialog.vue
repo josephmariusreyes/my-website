@@ -160,7 +160,11 @@ const handleClose = () => {
 
 <style scoped>
 .dialog-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   font-size: 1.1rem;
   font-weight: 600;
@@ -178,13 +182,24 @@ const handleClose = () => {
 }
 
 .phone-link {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   font-size: 1.05rem;
   font-weight: 600;
   color: #6366f1;
   text-decoration: none;
   gap: 0.25rem;
+}
+
+/* Fallback for browsers without gap support */
+@supports not (gap: 0.25rem) {
+  .phone-link > * + * {
+    margin-left: 0.25rem;
+  }
 }
 
 .phone-link:hover {

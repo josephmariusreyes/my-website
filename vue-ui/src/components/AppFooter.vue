@@ -38,10 +38,24 @@ function scrollToTop() {
 }
 
 .footer-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 0.6rem;
+}
+
+/* Fallback for browsers without gap support */
+@supports not (gap: 0.6rem) {
+  .footer-inner > * + * {
+    margin-top: 0.6rem;
+  }
 }
 
 .footer-name {
@@ -50,13 +64,25 @@ function scrollToTop() {
 }
 
 .footer-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 0.5rem;
 }
 
+/* Fallback for browsers without gap support */
+@supports not (gap: 0.5rem) {
+  .footer-links > * + * {
+    margin-left: 0.5rem;
+  }
+}
+
 .footer-links a {
   color: var(--primary);
+  -webkit-transition: color 0.2s ease;
   transition: color 0.2s ease;
 }
 
@@ -80,7 +106,10 @@ function scrollToTop() {
   }
 
   .footer-links {
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     gap: 0.4rem;
   }

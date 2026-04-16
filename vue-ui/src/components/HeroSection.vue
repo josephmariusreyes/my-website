@@ -83,10 +83,23 @@ const showContact = ref(false)
 
 <style scoped>
 .hero-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   gap: 2.5rem;
+}
+
+/* Fallback for browsers without gap support */
+@supports not (gap: 2.5rem) {
+  .hero-inner > * + * {
+    margin-left: 2.5rem;
+  }
 }
 
 .profile-picture {
@@ -96,14 +109,27 @@ const showContact = ref(false)
   background-color: #d1d5db;
   background-size: cover;
   background-position: 1px 2px;
+  -ms-flex-negative: 0;
   flex-shrink: 0;
   border: 5px solid #6366f1;
 }
 
 .hero-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 0.45rem;
+}
+
+/* Fallback for browsers without gap support */
+@supports not (gap: 0.45rem) {
+  .hero-text > * + * {
+    margin-top: 0.45rem;
+  }
 }
 
 .hero-name {
@@ -121,17 +147,35 @@ const showContact = ref(false)
 }
 
 .hero-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 0.75rem;
   margin-top: 0.35rem;
 }
 
+/* Fallback for browsers without gap support */
+@supports not (gap: 0.75rem) {
+  .hero-actions > * + * {
+    margin-left: 0.75rem;
+  }
+}
+
 .social-link {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   color: var(--text-heading);
+  -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
 }
 
@@ -152,20 +196,44 @@ const showContact = ref(false)
 
 @media (max-width: 500px) {
   .hero-inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     text-align: center;
   }
 
+  /* Reset horizontal gap fallback for column layout */
+  @supports not (gap: 2.5rem) {
+    .hero-inner > * + * {
+      margin-left: 0;
+      margin-top: 1.5rem;
+    }
+  }
+
   .hero-actions {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
   }
 }
 
 @media (max-width: 768px) {
   .hero-inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     text-align: center;
     gap: 1.5rem;
+  }
+
+  /* Reset horizontal gap fallback for column layout */
+  @supports not (gap: 1.5rem) {
+    .hero-inner > * + * {
+      margin-left: 0;
+      margin-top: 1.5rem;
+    }
   }
 
   .profile-picture {
@@ -182,7 +250,10 @@ const showContact = ref(false)
   }
 
   .hero-actions {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
 }

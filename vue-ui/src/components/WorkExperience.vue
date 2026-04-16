@@ -106,26 +106,45 @@ const expanded = ref(experiences.map(() => false))
 /* ── Scroll animations ────────────────────────────── */
 .experience-item {
   opacity: 0;
+  -webkit-transform: translateY(30px);
+  -ms-transform: translateY(30px);
   transform: translateY(30px);
+  -webkit-transition: opacity 0.6s ease-out, -webkit-transform 0.6s ease-out;
+  transition: opacity 0.6s ease-out, -webkit-transform 0.6s ease-out;
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out, -webkit-transform 0.6s ease-out;
 }
 
 .experience-item.visible {
   opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
   transform: translateY(0);
 }
 
 /* Stagger animation for experience items */
-.experience-item-0 { transition-delay: 0s; }
-.experience-item-1 { transition-delay: 0.1s; }
-.experience-item-2 { transition-delay: 0.2s; }
+.experience-item-0 { -webkit-transition-delay: 0s; transition-delay: 0s; }
+.experience-item-1 { -webkit-transition-delay: 0.1s; transition-delay: 0.1s; }
+.experience-item-2 { -webkit-transition-delay: 0.2s; transition-delay: 0.2s; }
 
 .experience-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 1rem;
   max-width: 635px;
   margin: 0 auto;
+}
+
+/* Fallback for browsers without gap support */
+@supports not (gap: 1rem) {
+  .experience-list > * + * {
+    margin-top: 1rem;
+  }
 }
 
 .experience-role,
@@ -149,6 +168,7 @@ const expanded = ref(experiences.map(() => false))
 .experience-body {
   max-height: 100px;
   overflow: hidden;
+  -webkit-transition: max-height 0.4s ease;
   transition: max-height 0.4s ease;
   position: relative;
 }
@@ -160,6 +180,7 @@ const expanded = ref(experiences.map(() => false))
   left: 0;
   right: 0;
   height: 2rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(var(--bg, #fff)));
   background: linear-gradient(to bottom, transparent, var(--bg, #fff));
   pointer-events: none;
 }
@@ -212,10 +233,24 @@ const expanded = ref(experiences.map(() => false))
   }
 
   .experience-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
     gap: 0.25rem;
+  }
+
+  /* Fallback for browsers without gap support */
+  @supports not (gap: 0.25rem) {
+    .experience-header > * + * {
+      margin-top: 0.25rem;
+    }
   }
 
   .experience-separator {

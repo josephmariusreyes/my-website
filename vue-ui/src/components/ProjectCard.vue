@@ -44,6 +44,7 @@ const props = defineProps({
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
+  -webkit-box-shadow: var(--card-shadow);
   box-shadow: var(--card-shadow);
   background: var(--bg);
   display: block;
@@ -60,6 +61,7 @@ const props = defineProps({
   background-color: #e5e7eb;
   background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .card-body {

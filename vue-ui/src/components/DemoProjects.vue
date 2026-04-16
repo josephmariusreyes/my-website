@@ -57,15 +57,31 @@ const projects = [
 }
 
 .projects-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 1.25rem;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+}
+
+/* Fallback for browsers without gap support */
+@supports not (gap: 1.25rem) {
+  .projects-grid {
+    margin: -0.625rem;
+  }
+  .projects-grid > * {
+    margin: 0.625rem;
+  }
 }
 
 .card-slot {
   width: calc((100% - 2 * 1.25rem) / 3);
   max-width: 270px;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 

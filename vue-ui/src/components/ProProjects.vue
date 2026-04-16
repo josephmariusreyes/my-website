@@ -75,12 +75,19 @@ const slides = computed(() => {
 /* ── Scroll animations ────────────────────────────── */
 .professional-projects {
   opacity: 0;
+  -webkit-transform: translateY(30px);
+  -ms-transform: translateY(30px);
   transform: translateY(30px);
+  -webkit-transition: opacity 0.6s ease-out, -webkit-transform 0.6s ease-out;
+  transition: opacity 0.6s ease-out, -webkit-transform 0.6s ease-out;
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out, -webkit-transform 0.6s ease-out;
 }
 
 .professional-projects.visible {
   opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
   transform: translateY(0);
 }
 
@@ -118,14 +125,32 @@ const slides = computed(() => {
 }
 
 .carousel-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
   align-items: stretch;
   gap: 1rem;
   padding: 1rem 3rem;
 }
 
+/* Fallback for browsers without gap support */
+@supports not (gap: 1rem) {
+  .carousel-slide {
+    margin: -0.5rem;
+  }
+  .carousel-slide > * {
+    margin: 0.5rem;
+  }
+}
+
 .slide-card {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   min-width: 0;
   max-width: 270px;
@@ -134,7 +159,12 @@ const slides = computed(() => {
 /* ── Responsive ───────────────────────────────────── */
 @media (max-width: 768px) {
   .carousel-slide {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     padding: 1rem;
     gap: 1rem;

@@ -1,8 +1,6 @@
-version: "3.9"
-
 # Base shared config. Always combine with an override file:
-#   Development: docker compose -f docker-compose.yml -f docker-compose.dev.yml up
-#   Production:  docker compose -f docker-compose.yml -f docker-compose.prod.yml up --build
+#   Staging:    docker compose -f docker-compose.yml -f docker-compose.staging.yml up
+#   Production: docker compose -f docker-compose.yml -f docker-compose.prod.yml up --build
 
 services:
 

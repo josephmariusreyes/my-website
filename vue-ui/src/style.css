@@ -30,6 +30,7 @@
 *,
 *::before,
 *::after {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -119,7 +120,11 @@ li {
 /* ── Buttons ──────────────────────────────────────── */
 
 .btn {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 0.5rem;
   padding: 0.55rem 1.4rem;
@@ -127,10 +132,18 @@ li {
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
+  -webkit-transition: background-color 0.2s ease;
   transition: background-color 0.2s ease;
   border: none;
   font-family: var(--sans);
   text-decoration: none;
+}
+
+/* Fallback for browsers without gap support */
+@supports not (gap: 0.5rem) {
+  .btn > * + * {
+    margin-left: 0.5rem;
+  }
 }
 
 .btn-primary {

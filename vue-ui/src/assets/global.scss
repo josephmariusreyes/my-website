@@ -141,25 +141,43 @@ $z-tooltip: 1070;
 
 // Flexbox
 @mixin flex-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 @mixin flex-between {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 @mixin flex-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 // Typography
 @mixin text-truncate {
   overflow: hidden;
+  -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -173,13 +191,18 @@ $z-tooltip: 1070;
 
 // Transitions
 @mixin transition($properties...) {
+  -webkit-transition-property: $properties;
   transition-property: $properties;
+  -webkit-transition-duration: 300ms;
   transition-duration: 300ms;
+  -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
 }
 
 // Buttons
 @mixin button-reset {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   background: none;
   border: none;
@@ -219,12 +242,15 @@ $z-tooltip: 1070;
 *,
 *::before,
 *::after {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  // Fallback for browsers that don't support scroll-behavior
+  -webkit-overflow-scrolling: touch;
 }
 
 body {

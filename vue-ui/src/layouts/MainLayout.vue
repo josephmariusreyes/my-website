@@ -9,6 +9,7 @@
 
 <style scoped>
 .main-layout {
-  min-height: 100vh;
+  min-height: 100vh; /* Fallback */
+  min-height: 100dvh;
 }
 </style>

@@ -188,28 +188,35 @@ const otherSkills = [
 .top-card,
 .other-skills-list {
   opacity: 0;
+  -webkit-transform: translateY(30px);
+  -ms-transform: translateY(30px);
   transform: translateY(30px);
+  -webkit-transition: opacity 0.6s ease-out, -webkit-transform 0.6s ease-out;
+  transition: opacity 0.6s ease-out, -webkit-transform 0.6s ease-out;
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out, -webkit-transform 0.6s ease-out;
 }
 
 .qual-card.visible,
 .top-card.visible,
 .other-skills-list.visible {
   opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
   transform: translateY(0);
 }
 
 /* Stagger animation for qual-cards */
-.qual-card:nth-child(1) { transition-delay: 0s; }
-.qual-card:nth-child(2) { transition-delay: 0.1s; }
-.qual-card:nth-child(3) { transition-delay: 0.2s; }
-.qual-card:nth-child(4) { transition-delay: 0.3s; }
+.qual-card:nth-child(1) { -webkit-transition-delay: 0s; transition-delay: 0s; }
+.qual-card:nth-child(2) { -webkit-transition-delay: 0.1s; transition-delay: 0.1s; }
+.qual-card:nth-child(3) { -webkit-transition-delay: 0.2s; transition-delay: 0.2s; }
+.qual-card:nth-child(4) { -webkit-transition-delay: 0.3s; transition-delay: 0.3s; }
 
 /* Stagger animation for top-cards */
-.top-card:nth-child(1) { transition-delay: 0s; }
-.top-card:nth-child(2) { transition-delay: 0.1s; }
-.top-card:nth-child(3) { transition-delay: 0.2s; }
-.top-card:nth-child(4) { transition-delay: 0.3s; }
+.top-card:nth-child(1) { -webkit-transition-delay: 0s; transition-delay: 0s; }
+.top-card:nth-child(2) { -webkit-transition-delay: 0.1s; transition-delay: 0.1s; }
+.top-card:nth-child(3) { -webkit-transition-delay: 0.2s; transition-delay: 0.2s; }
+.top-card:nth-child(4) { -webkit-transition-delay: 0.3s; transition-delay: 0.3s; }
 
 /* ── Section headers ──────────────────────────────── */
 .row-header {
@@ -226,7 +233,9 @@ const otherSkills = [
 
 /* ── Qualifications grid ──────────────────────────── */
 .qual-grid {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 1.5rem 1fr;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
@@ -236,25 +245,43 @@ const otherSkills = [
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.5rem;
+  -webkit-box-shadow: var(--card-shadow);
   box-shadow: var(--card-shadow);
 }
 
 .qual-card__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 0.75rem;
 }
 
+/* Fallback for browsers without gap support */
+@supports not (gap: 0.75rem) {
+  .qual-card__header > * + * {
+    margin-left: 0.75rem;
+  }
+}
+
 .qual-card__icon {
   font-size: 1.75rem;
+  -ms-flex-negative: 0;
   flex-shrink: 0;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
   transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
   cursor: default;
   display: inline-block;
 }
 
 .qual-card__icon:hover {
+  -webkit-transform: scale(1.18);
+  -ms-transform: scale(1.18);
   transform: scale(1.18);
 }
 
@@ -290,7 +317,9 @@ const otherSkills = [
 
 /* ── Top skill cards ──────────────────────────────── */
 .top-skills-grid {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 1.5rem 1fr;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
@@ -300,6 +329,7 @@ const otherSkills = [
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+  -webkit-box-shadow: var(--card-shadow);
   box-shadow: var(--card-shadow);
 }
 
@@ -314,17 +344,40 @@ const otherSkills = [
 }
 
 .top-card__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   gap: 1rem;
   margin-bottom: 0.85rem;
 }
 
+/* Fallback for browsers without gap support */
+@supports not (gap: 1rem) {
+  .top-card__header > * + * {
+    margin-left: 1rem;
+  }
+}
+
 .top-card__logos {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 0.5rem;
+  -ms-flex-negative: 0;
   flex-shrink: 0;
+}
+
+/* Fallback for browsers without gap support */
+@supports not (gap: 0.5rem) {
+  .top-card__logos > * + * {
+    margin-left: 0.5rem;
+  }
 }
 
 .logo-circle {
@@ -332,22 +385,35 @@ const otherSkills = [
   height: 66px;
   border-radius: 50%;
   background: #e5e7eb;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   padding: 10px;
+  -ms-flex-negative: 0;
   flex-shrink: 0;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
   transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
   cursor: default;
 }
 
 .logo-circle:hover {
+  -webkit-transform: scale(1.18);
+  -ms-transform: scale(1.18);
   transform: scale(1.18);
 }
 
 .logo-circle img {
   width: 100%;
   height: 100%;
+  -o-object-fit: contain;
   object-fit: contain;
 }
 
@@ -377,26 +443,42 @@ const otherSkills = [
 
 /* ── Other skills bars ────────────────────────────── */
 .other-skills-list {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 2rem 1fr;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.75rem 2rem;
 }
 
 .skill-bar-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 0.85rem;
+}
+
+/* Fallback for browsers without gap support */
+@supports not (gap: 0.85rem) {
+  .skill-bar-item > * + * {
+    margin-left: 0.85rem;
+  }
 }
 
 .skill-bar-icon {
   width: 22px;
   height: 22px;
+  -o-object-fit: contain;
   object-fit: contain;
+  -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
 .skill-bar-name {
   width: 110px;
+  -ms-flex-negative: 0;
   flex-shrink: 0;
   font-size: 0.9rem;
   font-weight: 600;
@@ -404,6 +486,8 @@ const otherSkills = [
 }
 
 .skill-bar-track {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   height: 8px;
   background: var(--border);
@@ -415,11 +499,13 @@ const otherSkills = [
   height: 100%;
   background: var(--primary);
   border-radius: 999px;
+  -webkit-transition: width 0.6s ease;
   transition: width 0.6s ease;
 }
 
 .skill-bar-score {
   width: 36px;
+  -ms-flex-negative: 0;
   flex-shrink: 0;
   font-size: 0.8rem;
   color: var(--text-body);
@@ -437,8 +523,19 @@ const otherSkills = [
   }
 
   .top-card__header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  /* Reset gap fallback for column layout */
+  @supports not (gap: 0.5rem) {
+    .top-card__header > * + * {
+      margin-left: 0;
+      margin-top: 0.5rem;
+    }
   }
 
   .top-card__name {
@@ -456,14 +553,17 @@ const otherSkills = [
 /* Mobile: single column everything */
 @media (max-width: 600px) {
   .qual-grid {
+    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
 
   .top-skills-grid {
+    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
 
   .other-skills-list {
+    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
 

@@ -1,11 +1,24 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, onMounted, onUnmounted } from 'vue'
+import { initScrollAnimation } from '@/services/uiAnimationUtil'
 import ProjectCard from './ProjectCard.vue'
 import dcDashboardImg from '@/assets/dc-dashboard.png'
 import dwsImg from '@/assets/dws.png'
 import auctionCenterImg from '@/assets/auction-center.png'
 import dcChatImg from '@/assets/mobile-dc-chat-resize.png'
 import nhtImg from '@/assets/nht.png'
+
+let cleanupAnimation = null
+
+onMounted(() => {
+  cleanupAnimation = initScrollAnimation('.professional-projects')
+})
+
+onUnmounted(() => {
+  if (cleanupAnimation) {
+    cleanupAnimation()
+  }
+})
 
 const projects = [
   { id: 1, title: 'North Hollywood Toyota', image: nhtImg, description: 'North Hollywood Toyota dealership website, supporting vehicle listings, customer inquiries, and service scheduling.', url: 'https://www.toyotaofhollywood.com/' },
@@ -26,7 +39,7 @@ const slides = computed(() => {
 </script>
 
 <template>
-  <section class="section-wrapper">
+  <section class="section-wrapper professional-projects">
     <div class="row-header">
       <h2 class="section-title">Professional Projects</h2>
       <p class="row-subtitle">Here are some of the applications and projects I've worked on, developing and maintaining them throughout my professional career.</p>
@@ -59,6 +72,18 @@ const slides = computed(() => {
 </template>
 
 <style scoped>
+/* ── Scroll animations ────────────────────────────── */
+.professional-projects {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.professional-projects.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .row-header {
   margin-bottom: 1.75rem;
 }

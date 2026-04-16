@@ -149,8 +149,24 @@
 </template>
 
 <script setup>
+import { onMounted, onUnmounted } from 'vue'
+import { initScrollAnimation } from '@/services/uiAnimationUtil'
+
 const devicon = (name, variant = 'original') =>
   `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${name}/${name}-${variant}.svg`
+
+// Scroll animation cleanup function
+let cleanupAnimation = null
+
+onMounted(() => {
+  cleanupAnimation = initScrollAnimation('.qual-card, .top-card, .other-skills-list')
+})
+
+onUnmounted(() => {
+  if (cleanupAnimation) {
+    cleanupAnimation()
+  }
+})
 
 const otherSkills = [
   { name: 'Github',     logo: devicon('github'),                                                                          score: 9 },
@@ -167,6 +183,34 @@ const otherSkills = [
 </script>
 
 <style scoped>
+/* ── Scroll animations ────────────────────────────── */
+.qual-card,
+.top-card,
+.other-skills-list {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.qual-card.visible,
+.top-card.visible,
+.other-skills-list.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger animation for qual-cards */
+.qual-card:nth-child(1) { transition-delay: 0s; }
+.qual-card:nth-child(2) { transition-delay: 0.1s; }
+.qual-card:nth-child(3) { transition-delay: 0.2s; }
+.qual-card:nth-child(4) { transition-delay: 0.3s; }
+
+/* Stagger animation for top-cards */
+.top-card:nth-child(1) { transition-delay: 0s; }
+.top-card:nth-child(2) { transition-delay: 0.1s; }
+.top-card:nth-child(3) { transition-delay: 0.2s; }
+.top-card:nth-child(4) { transition-delay: 0.3s; }
+
 /* ── Section headers ──────────────────────────────── */
 .row-header {
   text-align: center;

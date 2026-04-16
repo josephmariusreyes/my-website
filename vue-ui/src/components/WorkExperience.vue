@@ -1,5 +1,18 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
+import { initScrollAnimation } from '@/services/uiAnimationUtil'
+
+let cleanupAnimation = null
+
+onMounted(() => {
+  cleanupAnimation = initScrollAnimation('.experience-item')
+})
+
+onUnmounted(() => {
+  if (cleanupAnimation) {
+    cleanupAnimation()
+  }
+})
 
 const experiences = [
   {
@@ -58,7 +71,7 @@ const expanded = ref(experiences.map(() => false))
     <h2 class="section-title">Work Experience</h2>
 
     <div class="experience-list">
-      <div v-for="(exp, index) in experiences" :key="index" class="experience-item">
+      <div v-for="(exp, index) in experiences" :key="index" :class="['experience-item', `experience-item-${index}`]">
         <div class="experience-header">
           <span class="experience-role">{{ exp.role }}</span>
           <span class="experience-separator"> | </span>
@@ -90,6 +103,23 @@ const expanded = ref(experiences.map(() => false))
 </template>
 
 <style scoped>
+/* ── Scroll animations ────────────────────────────── */
+.experience-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.experience-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger animation for experience items */
+.experience-item-0 { transition-delay: 0s; }
+.experience-item-1 { transition-delay: 0.1s; }
+.experience-item-2 { transition-delay: 0.2s; }
+
 .experience-list {
   display: flex;
   flex-direction: column;

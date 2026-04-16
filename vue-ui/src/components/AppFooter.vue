@@ -30,10 +30,10 @@ function scrollToTop() {
 <style scoped>
 .site-footer {
   border-top: 1px solid var(--border);
-  background: var(--bg);
+  background: #ffffff; /* Explicit white to prevent browser dark mode interference */
   padding: 2rem 2.5rem;
   text-align: center;
-  color: var(--text-body);
+  color: #4b5563; /* Explicit color to prevent browser dark mode interference */
   font-size: 0.85rem;
 }
 
@@ -60,7 +60,7 @@ function scrollToTop() {
 
 .footer-name {
   font-weight: 600;
-  color: var(--text-heading);
+  color: #111827; /* Explicit color to prevent browser dark mode interference */
 }
 
 .footer-links {

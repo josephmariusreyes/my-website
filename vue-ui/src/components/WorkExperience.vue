@@ -150,17 +150,17 @@ const expanded = ref(experiences.map(() => false))
 .experience-role,
 .experience-company {
   font-weight: 700;
-  color: var(--text-heading);
+  color: #111827; /* Explicit color to prevent browser dark mode interference */
   font-size: 0.95rem;
 }
 
 .experience-separator {
-  color: var(--text-body);
+  color: #4b5563; /* Explicit color to prevent browser dark mode interference */
   margin: 0 0.15rem;
 }
 
 .experience-period {
-  color: var(--text-body);
+  color: #4b5563; /* Explicit color to prevent browser dark mode interference */
   font-size: 0.9rem;
   margin-left: 0.5rem;
 }
@@ -180,8 +180,8 @@ const expanded = ref(experiences.map(() => false))
   left: 0;
   right: 0;
   height: 2rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(var(--bg, #fff)));
-  background: linear-gradient(to bottom, transparent, var(--bg, #fff));
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#ffffff));
+  background: linear-gradient(to bottom, transparent, #ffffff);
   pointer-events: none;
 }
 
@@ -194,7 +194,7 @@ const expanded = ref(experiences.map(() => false))
   margin: 0.5rem auto 0;
   background: none;
   border: none;
-  color: var(--text-heading);
+  color: #111827; /* Explicit dark color to prevent browser dark mode interference */
   font-size: 0.72rem;
   font-weight: 600;
   cursor: pointer;
@@ -222,7 +222,7 @@ const expanded = ref(experiences.map(() => false))
 
 .experience-list-items li {
   font-size: 0.92rem;
-  color: var(--text-body);
+  color: #4b5563; /* Explicit color to prevent browser dark mode interference */
   margin-bottom: 0.3rem;
 }
 

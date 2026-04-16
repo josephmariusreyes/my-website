@@ -46,7 +46,7 @@ const props = defineProps({
   overflow: hidden;
   -webkit-box-shadow: var(--card-shadow);
   box-shadow: var(--card-shadow);
-  background: var(--bg);
+  background: #ffffff; /* Explicit white to prevent browser dark mode interference */
   display: block;
   text-decoration: none;
   color: inherit;
@@ -72,12 +72,12 @@ const props = defineProps({
 .card-title {
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--text-heading);
+  color: #111827; /* Explicit color to prevent browser dark mode interference */
 }
 
 .card-description {
   font-size: 0.75rem;
-  color: var(--text-body);
+  color: #4b5563; /* Explicit color to prevent browser dark mode interference */
   line-height: 1.4;
   text-align: left;
 }

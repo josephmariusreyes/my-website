@@ -134,15 +134,16 @@ const showContact = ref(false)
 
 .hero-name {
   font-size: 1.65rem;
+  color: #111827; /* Explicit color to prevent browser dark mode interference */
 }
 
 .hero-tagline {
-  color: var(--text-body);
+  color: #4b5563; /* Explicit color to prevent browser dark mode interference */
   font-size: 0.95rem;
 }
 
 .hero-bio {
-  color: var(--text-body);
+  color: #4b5563; /* Explicit color to prevent browser dark mode interference */
   font-size: 0.95rem;
 }
 
@@ -174,7 +175,7 @@ const showContact = ref(false)
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  color: var(--text-heading);
+  color: #111827; /* Explicit color to prevent browser dark mode interference */
   -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
 }

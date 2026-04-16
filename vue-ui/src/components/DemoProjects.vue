@@ -35,7 +35,7 @@ const projects = [
 .section-title {
   font-size: 1.6rem;
   font-weight: 700;
-  color: var(--text-heading);
+  color: #111827; /* Explicit color to prevent browser dark mode interference */
   margin-bottom: 0.4rem;
 }
 
@@ -50,7 +50,7 @@ const projects = [
 }
 
 .row-subtitle {
-  color: var(--text-body);
+  color: #4b5563; /* Explicit color to prevent browser dark mode interference */
   font-size: 0.9rem;
   margin-top: 0.25rem;
   text-align: center;

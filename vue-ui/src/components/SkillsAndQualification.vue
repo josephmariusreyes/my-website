@@ -227,7 +227,7 @@ const otherSkills = [
 .section-title {
   font-size: 1.6rem;
   font-weight: 700;
-  color: var(--text-heading);
+  color: #111827; /* Explicit color to prevent browser dark mode interference */
   margin-bottom: 0.4rem;
 }
 
@@ -241,7 +241,7 @@ const otherSkills = [
 }
 
 .qual-card {
-  background: var(--bg);
+  background: #ffffff; /* Explicit white background to prevent browser dark mode interference */
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.5rem;
@@ -288,13 +288,13 @@ const otherSkills = [
 .qual-card__title {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--text-heading);
+  color: #111827; /* Explicit color to prevent browser dark mode interference */
   margin: 0;
 }
 
 .qual-card__desc {
   font-size: 0.875rem;
-  color: var(--text-body);
+  color: #4b5563; /* Explicit color to prevent browser dark mode interference */
   line-height: 1.65;
   margin: 0;
 }
@@ -310,7 +310,7 @@ const otherSkills = [
 }
 
 .row-subtitle {
-  color: var(--text-body);
+  color: #4b5563; /* Explicit color to prevent browser dark mode interference */
   font-size: 0.9rem;
   margin-top: 0.25rem;
 }
@@ -326,7 +326,7 @@ const otherSkills = [
 
 .top-card {
   padding: 1.5rem;
-  background: var(--bg);
+  background: #ffffff; /* Explicit white background to prevent browser dark mode interference */
   border: 1px solid var(--border);
   border-radius: var(--radius);
   -webkit-box-shadow: var(--card-shadow);
@@ -431,13 +431,13 @@ const otherSkills = [
 .top-card__name {
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--text-heading);
+  color: #111827; /* Explicit color to prevent browser dark mode interference */
   margin: 0;
 }
 
 .top-card__desc {
   font-size: 0.85rem;
-  color: var(--text-body);
+  color: #4b5563; /* Explicit color to prevent browser dark mode interference */
   line-height: 1.6;
 }
 
@@ -482,7 +482,7 @@ const otherSkills = [
   flex-shrink: 0;
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--text-heading);
+  color: #111827; /* Explicit color to prevent browser dark mode interference */
 }
 
 .skill-bar-track {
@@ -508,7 +508,7 @@ const otherSkills = [
   -ms-flex-negative: 0;
   flex-shrink: 0;
   font-size: 0.8rem;
-  color: var(--text-body);
+  color: #4b5563; /* Explicit color to prevent browser dark mode interference */
   text-align: right;
 }
 

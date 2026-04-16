@@ -384,6 +384,31 @@ const otherSkills = [
 
 /* ── Responsive ───────────────────────────────────── */
 
+/* Tablet: 2 columns still works but tighter spacing */
+@media (max-width: 768px) {
+  .qual-grid,
+  .top-skills-grid,
+  .other-skills-list {
+    gap: 1rem;
+  }
+
+  .top-card__header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .top-card__name {
+    text-align: center;
+    font-size: 0.95rem;
+  }
+
+  .logo-circle {
+    width: 50px;
+    height: 50px;
+    padding: 8px;
+  }
+}
+
 /* Mobile: single column everything */
 @media (max-width: 600px) {
   .qual-grid {
@@ -394,8 +419,54 @@ const otherSkills = [
     grid-template-columns: 1fr;
   }
 
+  .other-skills-list {
+    grid-template-columns: 1fr;
+  }
+
   .skill-bar-name {
-    width: 90px;
+    width: 80px;
+    font-size: 0.85rem;
+  }
+
+  .skill-bar-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .skill-bar-item {
+    gap: 0.5rem;
+  }
+
+  .qual-card {
+    padding: 1rem;
+  }
+
+  .qual-card__icon {
+    font-size: 1.5rem;
+  }
+
+  .qual-card__title {
+    font-size: 0.9rem;
+  }
+
+  .qual-card__desc {
+    font-size: 0.8rem;
+  }
+
+  .top-card {
+    padding: 1rem;
+  }
+
+  .top-card__desc {
+    font-size: 0.8rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .row-subtitle {
+    font-size: 0.85rem;
   }
 }
 </style>

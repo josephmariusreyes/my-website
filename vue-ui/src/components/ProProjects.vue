@@ -105,4 +105,33 @@ const slides = computed(() => {
   min-width: 0;
   max-width: 270px;
 }
+
+/* ── Responsive ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .carousel-slide {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .slide-card {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .row-subtitle {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-slide {
+    padding: 0.75rem;
+  }
+}
 </style>

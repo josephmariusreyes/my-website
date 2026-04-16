@@ -72,4 +72,39 @@ function scrollToTop() {
 .footer-copy {
   opacity: 0.7;
 }
+
+/* ── Responsive ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 1.5rem 1rem;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+  }
+
+  .footer-name {
+    font-size: 0.9rem;
+  }
+
+  .footer-copy {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-sep {
+    display: none;
+  }
+
+  .footer-links {
+    gap: 0.75rem;
+  }
+
+  .footer-links a {
+    display: block;
+  }
+}
 </style>

@@ -75,7 +75,7 @@ li {
 /* ── App Shell ────────────────────────────────────── */
 
 #app {
-  min-width: 1024px;
+  width: 100%;
   max-width: 1024px;
   margin: 0 auto;
   background: #ffffff;
@@ -88,12 +88,25 @@ li {
   padding: 2.5rem;
 }
 
+@media (max-width: 768px) {
+  .section-wrapper {
+    padding: 1.5rem 1rem;
+  }
+}
+
 .section-title {
   font-size: 1.35rem;
   font-weight: 700;
   text-align: center;
   margin-bottom: 2rem;
   color: var(--text-heading);
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 .divider {

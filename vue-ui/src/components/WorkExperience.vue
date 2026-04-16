@@ -174,4 +174,40 @@ const expanded = ref(experiences.map(() => false))
   color: var(--text-body);
   margin-bottom: 0.3rem;
 }
+
+/* ── Responsive ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .experience-list {
+    max-width: 100%;
+  }
+
+  .experience-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .experience-separator {
+    display: none;
+  }
+
+  .experience-period {
+    margin-left: 0;
+    font-size: 0.85rem;
+  }
+
+  .experience-role,
+  .experience-company {
+    font-size: 0.9rem;
+  }
+
+  .experience-list-items {
+    padding-left: 1rem;
+  }
+
+  .experience-list-items li {
+    font-size: 0.85rem;
+  }
+}
 </style>

@@ -160,4 +160,30 @@ const showContact = ref(false)
     justify-content: center;
   }
 }
+
+@media (max-width: 768px) {
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .profile-picture {
+    width: 140px;
+    height: 140px;
+  }
+
+  .hero-name {
+    font-size: 1.35rem;
+  }
+
+  .hero-tagline {
+    font-size: 0.9rem;
+  }
+
+  .hero-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
 </style>

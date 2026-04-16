@@ -79,4 +79,23 @@ const props = defineProps({
   line-height: 1.4;
   text-align: left;
 }
+
+/* ── Responsive ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .card-image {
+    height: 140px;
+  }
+
+  .card-body {
+    padding: 0.75rem;
+  }
+
+  .card-title {
+    font-size: 0.85rem;
+  }
+
+  .card-description {
+    font-size: 0.7rem;
+  }
+}
 </style>

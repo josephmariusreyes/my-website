@@ -22,6 +22,7 @@ const showContact = ref(false)
           <br>
           AI First - FullStack Software Developer
         </h1>
+        <p>PHP + Laravel, Vue.js + Nuxt.js</p>
         <p>📍 based in the Philippines.</p>
         <p class="hero-tagline">
           Thanks for visiting my Portfolio website! I've been in the IT industry for 10 years building and maintaining enterprise applications in the auto finance sector. Throughout my career, I've focused on creating reliable apps that support real-world business operations.

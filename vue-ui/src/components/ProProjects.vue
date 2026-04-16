@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted, onUnmounted } from 'vue'
+import { computed, ref, onMounted, onUnmounted } from 'vue'
 import { initScrollAnimation } from '@/services/uiAnimationUtil'
 import ProjectCard from './ProjectCard.vue'
 import dcDashboardImg from '@/assets/dc-dashboard.png'
@@ -10,14 +10,29 @@ import nhtImg from '@/assets/nht.png'
 
 let cleanupAnimation = null
 
+// Responsive chunk size based on screen width
+const chunkSize = ref(3)
+
+const updateChunkSize = () => {
+  const width = window.innerWidth
+  if (width <= 768) {
+    chunkSize.value = 1 // Mobile: 1 item per slide
+  } else {
+    chunkSize.value = 3 // Desktop/iPad: 3 items per slide
+  }
+}
+
 onMounted(() => {
   cleanupAnimation = initScrollAnimation('.professional-projects')
+  updateChunkSize()
+  window.addEventListener('resize', updateChunkSize)
 })
 
 onUnmounted(() => {
   if (cleanupAnimation) {
     cleanupAnimation()
   }
+  window.removeEventListener('resize', updateChunkSize)
 })
 
 const projects = [
@@ -28,11 +43,10 @@ const projects = [
   { id: 5, title: 'DC Chat', image: dcChatImg, description: 'Is a messaging and communication tool built for automotive dealerships to interact with customers directly through their websites. It enables real-time conversations.', url: 'https://www.dealercenter.com/inventory-management/#im-auction-center' },
 ]
 
-const chunkSize = 3
 const slides = computed(() => {
   const result = []
-  for (let i = 0; i < projects.length; i += chunkSize) {
-    result.push(projects.slice(i, i + chunkSize))
+  for (let i = 0; i < projects.length; i += chunkSize.value) {
+    result.push(projects.slice(i, i + chunkSize.value))
   }
   return result
 })

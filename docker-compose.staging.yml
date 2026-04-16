@@ -9,9 +9,7 @@ services:
     build:
       # Target the 'production' stage which serves the compiled Vite build via nginx
       target: staging
-    ports:
-      # nginx serves on port 80 inside the container
-      - "80:80"
+
     # Automatically restart the container if it crashes or the host reboots
     restart: always
 
@@ -19,7 +17,6 @@ services:
     build:
       # Target the 'staging' stage which uses .env.staging for a VPS-ready image
       target: staging
-    ports:
-      - "8000:8000"
+
     # Automatically restart the container if it crashes or the host reboots
     restart: always

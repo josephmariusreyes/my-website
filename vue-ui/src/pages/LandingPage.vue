@@ -2,11 +2,17 @@
   <div v-if="isReady">
     <HeroSection />
     <hr class="divider" />
-    <SkillsAndQualification />
+    <section id="projects">
+      <ProProjects />
+    </section>
     <hr class="divider" />
-    <WorkExperience />
+    <section id="skills">
+      <SkillsAndQualification />
+    </section>
     <hr class="divider" />
-    <ProProjects />
+    <section id="experience">
+      <WorkExperience />
+    </section>
     <!-- <hr class="divider" />
     <DemoProjects />
     <hr class="divider" /> -->

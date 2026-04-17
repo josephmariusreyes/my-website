@@ -1,50 +1,8 @@
 <template>
   <section class="section-wrapper">
 
-    <!-- ── Row 1: Qualifications ──────────────────────────── -->
+    <!-- ── Row 1: Top skill set ───────────────────────────── -->
     <div class="row-header">
-      <h2 class="section-title">My Qualifications</h2>
-      <p class="row-subtitle">What sets Jeph apart from the rest of the pack?</p>
-    </div>
-
-    <div class="qual-grid">
-
-      <div class="qual-card">
-        <div class="qual-card__header">
-          <div class="qual-card__icon">🤖</div>
-          <h3 class="qual-card__title">AI First Development</h3>
-        </div>
-        <p class="qual-card__desc">I leverage AI tools to it's full potential to boost my productivity and deliverables.</p>
-      </div>
-
-      <div class="qual-card">
-        <div class="qual-card__header">
-          <div class="qual-card__icon">🧩</div>
-          <h3 class="qual-card__title">Ambiguity &amp; Business Understanding</h3>
-        </div>
-        <p class="qual-card__desc">I ask the right questions and turn vague business goals into clear, actionable solutions.</p>
-      </div>
-
-      <div class="qual-card">
-        <div class="qual-card__header">
-          <div class="qual-card__icon">🤝</div>
-          <h3 class="qual-card__title">Problem Solving &amp; Collaboration</h3>
-        </div>
-        <p class="qual-card__desc">I break down complex problems and work closely with teams to deliver practical, well-considered solutions.</p>
-      </div>
-
-      <div class="qual-card">
-        <div class="qual-card__header">
-          <div class="qual-card__icon">🏗️</div>
-          <h3 class="qual-card__title">Application Design &amp; Deployment</h3>
-        </div>
-        <p class="qual-card__desc">I design and build full applications from database to UI and take them all the way to production.</p>
-      </div>
-
-    </div>
-
-    <!-- ── Row 2: Top skill set ───────────────────────────── -->
-    <div class="row-header" style="margin-top: 3rem;">
       <h2 class="section-title">My Top Skill Set</h2>
       <p class="row-subtitle">My favorites technologies chosen for their ability to deliver simple, effective, and production-ready solutions.</p>
     </div>
@@ -128,8 +86,8 @@
 
     </div>
 
-    <!-- ── Row 3: Other skills ────────────────────────────── -->
-    <div class="row-header" style="margin-top: 3rem;">
+    <!-- ── Row 2: Other skills ────────────────────────────── -->
+    <div class="row-header">
       <h2 class="section-title">My Other Skills</h2>
       <p class="row-subtitle">Throughout my years in IT, I've had the opportunity to work with many different technologies. Below are the top 10 I have used within my profesional years.</p>
     </div>
@@ -143,6 +101,48 @@
         </div>
         <span class="skill-bar-score">{{ skill.score }}/10</span>
       </div>
+    </div>
+
+    <!-- ── Row 3: Qualifications ──────────────────────────── -->
+    <div class="row-header">
+      <h2 class="section-title">My Qualifications</h2>
+      <p class="row-subtitle">What sets Jeph apart from the rest of the pack?</p>
+    </div>
+
+    <div class="qual-grid">
+
+      <div class="qual-card">
+        <div class="qual-card__header">
+          <div class="qual-card__icon">🤖</div>
+          <h3 class="qual-card__title">AI First Development</h3>
+        </div>
+        <p class="qual-card__desc">I leverage AI tools to it's full potential to boost my productivity and deliverables.</p>
+      </div>
+
+      <div class="qual-card">
+        <div class="qual-card__header">
+          <div class="qual-card__icon">🧩</div>
+          <h3 class="qual-card__title">Ambiguity &amp; Business Understanding</h3>
+        </div>
+        <p class="qual-card__desc">I ask the right questions and turn vague business goals into clear, actionable solutions.</p>
+      </div>
+
+      <div class="qual-card">
+        <div class="qual-card__header">
+          <div class="qual-card__icon">🤝</div>
+          <h3 class="qual-card__title">Problem Solving &amp; Collaboration</h3>
+        </div>
+        <p class="qual-card__desc">I break down complex problems and work closely with teams to deliver practical, well-considered solutions.</p>
+      </div>
+
+      <div class="qual-card">
+        <div class="qual-card__header">
+          <div class="qual-card__icon">🏗️</div>
+          <h3 class="qual-card__title">Application Design &amp; Deployment</h3>
+        </div>
+        <p class="qual-card__desc">I design and build full applications from database to UI and take them all the way to production.</p>
+      </div>
+
     </div>
 
   </section>
@@ -222,6 +222,11 @@ const otherSkills = [
 .row-header {
   text-align: center;
   margin-bottom: 1.75rem;
+  margin-top: 3rem;
+}
+
+.row-header:first-child {
+  margin-top: 0;
 }
 
 .section-title {

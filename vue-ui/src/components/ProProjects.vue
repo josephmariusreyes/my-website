@@ -55,8 +55,8 @@ const slides = computed(() => {
 <template>
   <section class="section-wrapper professional-projects">
     <div class="row-header">
-      <h2 class="section-title">Professional Projects</h2>
-      <p class="row-subtitle">Here are some of the applications and projects I've worked on, developing and maintaining them throughout my professional career.</p>
+      <h2 class="section-title">Applications and Projects</h2>
+      <p class="row-subtitle">Some of the applications and projects I've worked on over the years.</p>
     </div>
 
     <v-carousel

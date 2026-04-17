@@ -67,14 +67,18 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 
+const router = useRouter()
+const route = useRoute()
 const mobileMenuOpen = ref(false)
 
 const navLinks = [
+  { id: 'home', label: 'Home', href: '/', scrollTo: false },
   { id: 'projects', label: 'Applications and Projects', href: '#projects', scrollTo: true },
   { id: 'skills', label: 'Skills and Qualification', href: '#skills', scrollTo: true },
   { id: 'experience', label: 'Work Experience', href: '#experience', scrollTo: true },
-  { id: 'articles', label: 'Articles', href: '#articles', scrollTo: false },
+  // { id: 'articles', label: 'Articles', href: '/articles', scrollTo: false },
 ]
 
 const scrollToSection = (sectionId) => {
@@ -87,20 +91,28 @@ const scrollToSection = (sectionId) => {
 const handleNavClick = (event, link) => {
   if (link.scrollTo) {
     event.preventDefault()
-    scrollToSection(link.id)
+    // If not on homepage, redirect to home with hash
+    if (route.path !== '/') {
+      router.push('/#' + link.id)
+    } else {
+      scrollToSection(link.id)
+    }
   }
 }
 
 const handleMobileNavClick = (event, link) => {
+  mobileMenuOpen.value = false
   if (link.scrollTo) {
     event.preventDefault()
-    mobileMenuOpen.value = false
-    // Small delay to allow dialog to close before scrolling
-    setTimeout(() => {
-      scrollToSection(link.id)
-    }, 100)
-  } else {
-    mobileMenuOpen.value = false
+    // If not on homepage, redirect to home with hash
+    if (route.path !== '/') {
+      router.push('/#' + link.id)
+    } else {
+      // Small delay to allow dialog to close before scrolling
+      setTimeout(() => {
+        scrollToSection(link.id)
+      }, 100)
+    }
   }
 }
 </script>
